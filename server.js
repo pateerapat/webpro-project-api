@@ -20,8 +20,22 @@ app.get("/", (req, res) => {
 });
 
 const routeBooks = require("./routes/books.route");
+const routeUsers = require("./routes/users.route");
+// const routeCarts = require("./routes/carts.route");
+const routeComments = require("./routes/comments.route");
+// const routeOrderItems = require("./routes/order-items.route");
+// const routeOrders = require("./routes/orders.route");
+const routePrizeHistory = require("./routes/prize-history.route");
+const routePrizes = require("./routes/prizes.route");
 
 app.use("/books", routeBooks);
+app.use("/users", routeUsers);
+// app.use("/carts", routeCarts);
+app.use("/comments", routeComments);
+// app.use("/order-items", routeOrderItems);
+// app.use("/orders", routeOrders);
+app.use("/prize-history", routePrizeHistory);
+app.use("/prizes", routePrizes);
 
 app.use((req, res, next) => {
     const err = new Error("Not Found");
